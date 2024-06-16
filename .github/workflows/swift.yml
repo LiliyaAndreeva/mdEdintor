@@ -1,15 +1,15 @@
 name: Swift
-    on:
-      pull_reguest:
-        branches: ["dev"]
 
-    jobs:
-       build:
-        name: Build App
-        runs-on: macos-latest
+on:
+  pull_request:
+    branches: [ "dev" ]
 
-        steps:
-          - uses: actions/checkout@v3
-          - name: Build
-            run: exec ./.github/build.sh
+jobs:
+    build:
+      name: Build App
+      runs-on: macos-latest
+      steps:
+      - uses: actions/checkout@v3
+      - name: Build
+      - run: exec ./.github/build.sh
 
